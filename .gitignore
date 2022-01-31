@@ -22,7 +22,6 @@ vendor/
 
 # Ignore test/build output directories
 coverage/*
-build/*
 bin/*
 test/*
 dist/*
