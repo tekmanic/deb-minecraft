@@ -5,7 +5,6 @@ all: build run
 run: build
 	docker run -d \
         --net="bridge" \
-        --name="minecraftserver" \
         -p 8222:8222/tcp \
         -p 19132:19132/tcp \
         -p 19132:19132/udp \
