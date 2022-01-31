@@ -39,17 +39,6 @@ else
 	OS_ARCH="x86-64"
 fi
 
-# pacman packages
-####
-
-# define pacman packages
-pacman_packages="rsync screen"
-
-# install compiled packages using pacman
-if [[ ! -z "${pacman_packages}" ]]; then
-	pacman -S --needed $pacman_packages --noconfirm
-fi
-
 # aur packages
 ####
 

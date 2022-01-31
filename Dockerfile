@@ -20,7 +20,11 @@ ADD run/nobody/*.sh /home/nobody/
 #############
 
 # make executable and run bash scripts to install app
-RUN chmod +x /root/*.sh && \
+RUN echo "**** install dependencies ****" && \
+	apt-get update && \
+	apt-get install -y \
+	curl unzip wget make rsync screen jq && \
+	chmod +x /root/*.sh && \
 	/bin/bash /root/install.sh "${release_tag_name}"
 
 # docker settings
