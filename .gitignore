@@ -1,0 +1,52 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+vendor/
+
+# MAC OS Specific
+.DS_Store
+.AppleDouble
+.LSOverride
+.Trashes
+
+# Ignore test/build output directories
+coverage/*
+build/*
+bin/*
+test/*
+dist/*
+
+# Ignore the node_modules directory
+web/node_modules
+
+# Ignore configs
+config/*
+
+# Ignore application output directory
+tmp/*
+old/*
+
+# ignore pycharm ide
+.idea
+
+# ignore compiled python scripts
+*.pyc
+
+# ignore virtual env
+venv
+.venv
+
+# ignore comments files
+todo.txt
+notes.txt
