@@ -26,11 +26,6 @@ cat << "EOF"
        `d######a.::::::::::'                                    .  .    
           `~9#####.::::''           .               .            .      
                                                                         
-     GOOD THING NOTCH FINALLY ADDED PHASES OF THE MOON                  
-     AND YET CLEARLY HAS NO IDEA HOW THEY WORK                          
-                                                                        
-     BUT WHAT DO YOU EXPECT FROM THE GUY WHO TOOK SO LONG               
-     FIGURING OUT THE DIFFERENCE BETWEEN NORTH AND EAST                 
 EOF
 
 if [[ "${HOST_OS,,}" == "unraid" ]]; then
@@ -41,7 +36,7 @@ echo "[info] System information $(uname -a)" | ts '%Y-%m-%d %H:%M:%.S'
 
 export OS_ARCH=$(cat /etc/os-release | grep -P -o -m 1 "(?=^ID\=).*" | grep -P -o -m 1 "[a-z]+$")
 if [[ ! -z "${OS_ARCH}" ]]; then
-	if [[ "${OS_ARCH}" == "arch" ]]; then
+	if [[ "${OS_ARCH}" == "debian" ]]; then
 		OS_ARCH="x86-64"
 	else
 		OS_ARCH="aarch64"
