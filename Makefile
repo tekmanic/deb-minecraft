@@ -1,15 +1,15 @@
 TOPDIR=$(PWD)
 
+.PHONY: all build run
 all: build run
 
 run: build
 	docker run -d \
         --net="bridge" \
+        --name=minecraft \
         -p 8222:8222/tcp \
-        -p 19132:19132/tcp \
-        -p 19132:19132/udp \
-        -p 19132:19133/tcp \
-        -p 19132:19133/udp \
+        -p 19132:19132 \
+        -p 19133:19133 \
         -v $(TOPDIR)/build:/config \
         -v /etc/localtime:/etc/localtime:ro \
         -e CREATE_BACKUP_HOURS=12 \
@@ -37,5 +37,5 @@ slim:
     --tag deb-minecraft:slim .
 
 clean:
-	docker kill deb-minecraft || true
-	docker rm -f deb-minecraft
+	docker kill minecraft || true
+	docker rm -f minecraft

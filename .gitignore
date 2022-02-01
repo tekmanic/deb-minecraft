@@ -25,6 +25,9 @@ coverage/*
 bin/*
 test/*
 dist/*
+build/minecraft/*
+build/perms.txt
+build/supervisord.log
 
 # Ignore the node_modules directory
 web/node_modules

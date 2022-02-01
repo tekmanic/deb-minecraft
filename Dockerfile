@@ -5,6 +5,7 @@ LABEL org.opencontainers.image.authors="tekmanic"
 ##################
 
 # add supervisor conf file for app
+ADD build/etc/*.conf /etc/
 ADD build/*.conf /etc/supervisor/conf.d/
 
 # add install bash script
@@ -16,6 +17,9 @@ ARG release_tag_name
 # add run bash script
 ADD run/nobody/*.sh /home/nobody/
 
+# add utils scripts
+ADD run/nobody/utils/*.sh /usr/local/bin/
+
 # install app
 #############
 
@@ -23,7 +27,7 @@ ADD run/nobody/*.sh /home/nobody/
 RUN echo "**** install dependencies ****" && \
 	apt-get update && \
 	apt-get install -y \
-	curl unzip wget make rsync screen jq && \
+	curl unzip wget make rsync screen jq moreutils net-tools supervisor htop python3 && \
 	chmod +x /root/*.sh && \
 	/bin/bash /root/install.sh "${release_tag_name}"
 
@@ -45,4 +49,5 @@ EXPOSE 8222/tcp
 #################
 
 # run script to set uid, gid and permissions
-CMD ["/bin/bash", "/usr/local/bin/init.sh"]
+CMD ["/bin/bash", "/home/nobody/start.sh"]
+# ENTRYPOINT [ "tail", "-f", "/dev/null" ]

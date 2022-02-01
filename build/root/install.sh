@@ -14,14 +14,7 @@ fi
 # build scripts
 ####
 
-# download build scripts from github
-curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/scripts-master.zip -L https://github.com/binhex/scripts/archive/master.zip
-
-# unzip build scripts
-unzip /tmp/scripts-master.zip -d /tmp
-
-# move shell scripts to /root
-mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
+chmod +x /usr/local/bin/*.sh
 
 # detect image arch
 ####
@@ -38,15 +31,6 @@ else
 	echo "[warn] Unable to identify OS_ARCH, defaulting to 'x86-64'"
 	OS_ARCH="x86-64"
 fi
-
-# aur packages
-####
-
-# define aur packages
-aur_packages=""
-
-# call aur install script (arch user repo)
-source aur.sh
 
 # github packages
 ####
@@ -202,6 +186,3 @@ sed -i '/# ENVVARS_PLACEHOLDER/{
     r /tmp/envvars_heredoc
 }' /usr/local/bin/init.sh
 rm /tmp/envvars_heredoc
-
-# cleanup
-cleanup.sh
