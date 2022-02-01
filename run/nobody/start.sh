@@ -61,8 +61,8 @@ copy_minecraft
 # start minecraft
 start_minecraft
 
-while true; do
+# while true; do
 
-sleep 5;
+# sleep 5;
 
-done;
+# done;

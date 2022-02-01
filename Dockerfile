@@ -49,5 +49,5 @@ EXPOSE 8222/tcp
 #################
 
 # run script to set uid, gid and permissions
-CMD ["/bin/bash", "/home/nobody/start.sh"]
+CMD ["/bin/bash", "/usr/local/bin/init.sh"]
 # ENTRYPOINT [ "tail", "-f", "/dev/null" ]
