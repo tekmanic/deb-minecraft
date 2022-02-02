@@ -10,8 +10,8 @@ run: build
         -p 8222:8222/tcp \
         -p 19132:19132/tcp \
         -p 19132:19132/udp \
-        -p 19132:19133/tcp \
-        -p 19132:19133/udp \
+        -p 19133:19133/tcp \
+        -p 19133:19133/udp \
         -v $(TOPDIR)/build:/config \
         -v /etc/localtime:/etc/localtime:ro \
         -e CREATE_BACKUP_HOURS=12 \
