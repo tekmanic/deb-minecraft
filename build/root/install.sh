@@ -11,7 +11,7 @@ set -e
 # 	exit 1
 # fi
 release_tag_name=$( \
-            curl -v --silent  https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | \
+            curl -v --silent -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://www.minecraft.net/en-us/download/server/bedrock 2>&1 | \
             grep -o 'https://minecraft.azureedge.net/bin-linux/[^"]*' | \
             sed 's#.*/bedrock-server-##' | sed 's/.zip//')
 
