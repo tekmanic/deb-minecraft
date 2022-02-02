@@ -34,7 +34,7 @@ function copy_minecraft(){
 
 			# if file is a zip file then extract to behavior_packs folder
 			if [ -f "${file}" ]; then
-			    name = $(basename -s .zip "${file}") 
+				name=$(basename -s .zip "${file}") 
 
 				echo "[info] Extracting zip file '${file}' to '/config/minecraft/behavior_packs'..."
 
