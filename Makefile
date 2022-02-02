@@ -27,12 +27,10 @@ run: build
 
 build:
 	docker build \
-    --build-arg release_tag_name=1.18.2.03 \
     -t deb-minecraft:latest .
 
 slim:
 	docker-slim build \
-    --build-arg release_tag_name=1.18.2.03 \
     --dockerfile Dockerfile \
     --tag deb-minecraft:slim .
 

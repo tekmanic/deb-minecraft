@@ -4,12 +4,22 @@
 set -e
 
 # release tag name from build arg, stripped of build ver using string manipulation
-release_tag_name="${1//-[0-9][0-9]/}"
+# release_tag_name="${1//-[0-9][0-9]/}"
+
+# if [[ -z "${release_tag_name}" ]]; then
+# 	echo "[warn] Release tag name from build arg is empty, exiting script..."
+# 	exit 1
+# fi
+release_tag_name=$( \
+            curl -v --silent  https://www.minecraft.net/en-us/download/server/bedrock/ 2>&1 | \
+            grep -o 'https://minecraft.azureedge.net/bin-linux/[^"]*' | \
+            sed 's#.*/bedrock-server-##' | sed 's/.zip//')
 
 if [[ -z "${release_tag_name}" ]]; then
-	echo "[warn] Release tag name from build arg is empty, exiting script..."
+	echo "[warn] Could not get release version, exiting script..."
 	exit 1
 fi
+echo "[info] Installing release '${release_tag_name}'"
 
 # build scripts
 ####
