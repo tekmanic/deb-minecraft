@@ -27,7 +27,7 @@ ADD run/nobody/utils/*.sh /usr/local/bin/
 RUN echo "**** install dependencies ****" && \
 	apt-get update && \
 	apt-get install -y \
-	curl unzip wget make rsync screen jq coreutils moreutils net-tools supervisor htop python3 && \
+	curl unzip wget make rsync screen jq coreutils moreutils net-tools supervisor htop python3 procps && \
 	chmod +x /root/*.sh && \
 	/bin/bash /root/install.sh
 

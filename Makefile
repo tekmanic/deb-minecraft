@@ -12,7 +12,7 @@ run: build
         -p 19132:19132/udp \
         -p 19133:19133/tcp \
         -p 19133:19133/udp \
-        -v $(TOPDIR)/build:/config \
+        -v $(TOPDIR)/config:/config \
         -v /etc/localtime:/etc/localtime:ro \
         -e CREATE_BACKUP_HOURS=12 \
         -e PURGE_BACKUP_DAYS=14 \

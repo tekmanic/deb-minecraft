@@ -32,9 +32,6 @@ build/supervisord.log
 # Ignore the node_modules directory
 web/node_modules
 
-# Ignore configs
-config/*
-
 # Ignore application output directory
 tmp/*
 old/*

@@ -65,6 +65,9 @@ rcurl.sh -o "/tmp/minecraftbedrockserver.zip" "${minecraft_bedrock_url}"
 # unzip minecraft bedrock server
 mkdir -p "/srv/minecraft" && unzip "/tmp/minecraftbedrockserver.zip" -d "/srv/minecraft"
 
+# record the version for reading later
+echo "${release_tag_name}" > /srv/minecraft/version
+
 # container perms
 ####
 

@@ -24,9 +24,33 @@ function copy_minecraft(){
 
 	fi
 
+	# if mods contains zip files then extract to /config/minecraft/behavior_packs
+	if [[ -d "/config/minecraft/mods" ]]; then
+
+		echo "[info] Checking for zip files in '/config/minecraft/mods'..."
+
+		# loop through files in mods folder
+		for file in /config/minecraft/mods/*.zip; do
+
+			# if file is a zip file then extract to behavior_packs folder
+			if [ -f "${file}" ]; then
+			    name = $(basename -s .zip "${file}") 
+
+				echo "[info] Extracting zip file '${file}' to '/config/minecraft/behavior_packs'..."
+
+				# extract zip file to behavior_packs folder
+				unzip -q -o "${file}" -d /config/minecraft/behavior_packs/${name}/
+
+			fi
+
+		done
+
+	fi
 }
 
 function start_minecraft() {
+	# print out the version
+	echo "[info] Minecraft version: $(cat /srv/minecraft/version)" | ts '%Y-%m-%d %H:%M:%.S'
 
 	# create logs sub folder to store screen output from console
 	mkdir -p /config/minecraft/logs
