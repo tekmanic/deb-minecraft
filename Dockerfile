@@ -29,7 +29,7 @@ RUN echo "**** install dependencies ****" && \
 	apt-get install -y \
 	curl unzip wget make rsync screen jq moreutils net-tools supervisor htop python3 && \
 	chmod +x /root/*.sh && \
-	/bin/bash /root/install.sh "${release_tag_name}"
+	/bin/bash /root/install.sh
 
 # docker settings
 #################
