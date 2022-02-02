@@ -39,6 +39,7 @@ function copy_minecraft(){
 				echo "[info] Extracting zip file '${file}' to '/config/minecraft/behavior_packs'..."
 
 				# extract zip file to behavior_packs folder
+				mkdir -p /config/minecraft/behavior_packs/${name}
 				unzip -q -o "${file}" -d /config/minecraft/behavior_packs/${name}/
 
 			fi

@@ -11,9 +11,6 @@ ADD build/*.conf /etc/supervisor/conf.d/
 # add install bash script
 ADD build/root/*.sh /root/
 
-# get release tag name from build arg
-ARG release_tag_name
-
 # add run bash script
 ADD run/nobody/*.sh /home/nobody/
 
