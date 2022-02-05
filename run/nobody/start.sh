@@ -47,13 +47,13 @@ function copy_minecraft(){
 		done
 
 		echo "[info] Adding the world_behavior_packs.json file to the world"
-		cp /config/minecraft/mods/world_behavior_packs.json /config/minecraft/worlds/world_behavior_packs.json
+		cp /config/minecraft/mods/world_behavior_packs.json /config/minecraft/worlds/EpicServer/world_behavior_packs.json
 	fi
 }
 
 function start_minecraft() {
 	# print out the version
-	echo "[info] Minecraft version: $(cat /srv/minecraft/version)" | ts '%Y-%m-%d %H:%M:%.S'
+	echo "[info] Minecraft version: $(cat /srv/minecraft/version)"
 
 	# create logs sub folder to store screen output from console
 	mkdir -p /config/minecraft/logs
