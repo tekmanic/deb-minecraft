@@ -46,6 +46,8 @@ function copy_minecraft(){
 
 		done
 
+		echo "[info] Adding the world_behavior_packs.json file to the world"
+		cp /config/minecraft/mods/world_behavior_packs.json /config/minecraft/worlds/world_behavior_packs.json
 	fi
 }
 
