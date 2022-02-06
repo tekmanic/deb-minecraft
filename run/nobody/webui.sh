@@ -9,6 +9,7 @@ if [[ "${ENABLE_WEBUI_CONSOLE}" == "yes" ]]; then
 	fi
 
 	echo "[info] Starting Minecraft console Web UI..."
+	touch /home/nobody/.gotty
 	# note - do NOT quote the credentials, it will not start otherwise
 	gotty --config /home/nobody/.gotty --port=8222 --title-format "${WEBUI_CONSOLE_TITLE}" ${credentials} --permit-write screen -x minecraft
 
