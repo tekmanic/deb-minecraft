@@ -77,9 +77,21 @@ User ID (PUID) and Group ID (PGID) can be found by issuing the following command
 id <username>
 ```
 
+## Custom server.properties and mods
+
+If you want to customize the server, add the following to the minecraft folder:
+
+- server.properties
+- mods/the_mod.zip
+- mods/world_behavior_packs.json
+
+Make sure to unzip any of the mods inside their respective zip files, i.e. the mcaddon or mcpack formats are not recognized.  You will need to kill and readd the container such that the init.sh scripts are re-run and the server configuration is moved around.
+
+---
+
 The inspiration for this image comes from [binhex-minecraft](https://github.com/binhex/arch-minecraftbedrockserver).
 
-___
+---
 
 If you appreciate my work, then please consider buying me a beer :D
 
